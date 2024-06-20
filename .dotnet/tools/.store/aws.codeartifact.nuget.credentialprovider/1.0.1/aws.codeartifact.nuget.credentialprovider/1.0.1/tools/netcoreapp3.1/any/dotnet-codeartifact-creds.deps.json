@@ -1,0 +1,90 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v3.1",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v3.1": {
+      "dotnet-codeartifact-creds/1.0.1": {
+        "dependencies": {
+          "AWS.CodeArtifact.NuGetCredentialProvider.Common": "1.0.0",
+          "System.CommandLine": "2.0.0-beta1.20427.1"
+        },
+        "runtime": {
+          "dotnet-codeartifact-creds.dll": {}
+        }
+      },
+      "Microsoft.CSharp/4.4.1": {},
+      "Newtonsoft.Json/13.0.1": {
+        "runtime": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {
+            "assemblyVersion": "13.0.0.0",
+            "fileVersion": "13.0.1.25517"
+          }
+        }
+      },
+      "System.CommandLine/2.0.0-beta1.20427.1": {
+        "dependencies": {
+          "Microsoft.CSharp": "4.4.1",
+          "System.Memory": "4.5.4"
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.CommandLine.dll": {
+            "assemblyVersion": "2.0.0.0",
+            "fileVersion": "2.0.20.42701"
+          }
+        }
+      },
+      "System.Memory/4.5.4": {},
+      "AWS.CodeArtifact.NuGetCredentialProvider.Common/1.0.0": {
+        "dependencies": {
+          "Newtonsoft.Json": "13.0.1"
+        },
+        "runtime": {
+          "AWS.CodeArtifact.NuGetCredentialProvider.Common.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "dotnet-codeartifact-creds/1.0.1": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Microsoft.CSharp/4.4.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-A5hI3gk6WpcBI0QGZY6/d5CCaYUxJgi7iENn1uYEng+Olo8RfI5ReGVkjXjeu3VR3srLvVYREATXa2M0X7FYJA==",
+      "path": "microsoft.csharp/4.4.1",
+      "hashPath": "microsoft.csharp.4.4.1.nupkg.sha512"
+    },
+    "Newtonsoft.Json/13.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-ppPFpBcvxdsfUonNcvITKqLl3bqxWbDCZIzDWHzjpdAHRFfZe0Dw9HmA0+za13IdyrgJwpkDTDA9fHaxOrt20A==",
+      "path": "newtonsoft.json/13.0.1",
+      "hashPath": "newtonsoft.json.13.0.1.nupkg.sha512"
+    },
+    "System.CommandLine/2.0.0-beta1.20427.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-UjTbOfEKkAd2HlzNOL9d9jv8if+Xkhr+iL6oBaYJfQi8qIKvDwFSub3bjNczwaGQYRgVcTqX2Tle4wi/r2y65g==",
+      "path": "system.commandline/2.0.0-beta1.20427.1",
+      "hashPath": "system.commandline.2.0.0-beta1.20427.1.nupkg.sha512"
+    },
+    "System.Memory/4.5.4": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-1MbJTHS1lZ4bS4FmsJjnuGJOu88ZzTT2rLvrhW7Ygic+pC0NWA+3hgAen0HRdsocuQXCkUTdFn9yHJJhsijDXw==",
+      "path": "system.memory/4.5.4",
+      "hashPath": "system.memory.4.5.4.nupkg.sha512"
+    },
+    "AWS.CodeArtifact.NuGetCredentialProvider.Common/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
