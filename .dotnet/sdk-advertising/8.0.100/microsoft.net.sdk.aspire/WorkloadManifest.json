@@ -1,5 +1,5 @@
 {
-  "version": "8.0.1",
+  "version": "8.0.2",
   "workloads": {
     "aspire": {
       "description": ".NET Aspire SDK (Preview)",
@@ -24,15 +24,15 @@
   "packs": {
     "Aspire.Hosting.Sdk": {
       "kind": "sdk",
-      "version": "8.0.1"
+      "version": "8.0.2"
     },
     "Aspire.ProjectTemplates": {
       "kind": "template",
-      "version": "8.0.1"
+      "version": "8.0.2"
     },
    "Aspire.Hosting.Orchestration": {
       "kind": "sdk",
-      "version": "8.0.1",
+      "version": "8.0.2",
       "alias-to": {
         "win-x86": "Aspire.Hosting.Orchestration.win-x86",
         "win-x64": "Aspire.Hosting.Orchestration.win-x64",
@@ -45,11 +45,11 @@
     },
     "Aspire.Hosting": {
       "kind": "library",
-      "version": "8.0.1"
+      "version": "8.0.2"
     },
     "Aspire.Dashboard.Sdk": {
       "kind": "sdk",
-      "version": "8.0.1",
+      "version": "8.0.2",
       "alias-to": {
         "win-x86": "Aspire.Dashboard.Sdk.win-x86",
         "win-x64": "Aspire.Dashboard.Sdk.win-x64",

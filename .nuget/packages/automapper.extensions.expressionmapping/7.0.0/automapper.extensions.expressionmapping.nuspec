@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+  <metadata>
+    <id>AutoMapper.Extensions.ExpressionMapping</id>
+    <version>7.0.0</version>
+    <authors>Jimmy Bogard</authors>
+    <license type="expression">MIT</license>
+    <licenseUrl>https://licenses.nuget.org/MIT</licenseUrl>
+    <icon>icon.png</icon>
+    <projectUrl>https://automapper.org/</projectUrl>
+    <description>Expression mapping (OData) extensions for AutoMapper</description>
+    <repository type="git" url="https://github.com/AutoMapper/AutoMapper.Extensions.ExpressionMapping" commit="69e5e93fbf51b8a12e4e71d4d175455e970b5bcc" />
+    <dependencies>
+      <group targetFramework="net6.0">
+        <dependency id="AutoMapper" version="[13.0.0, 14.0.0)" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+  </metadata>
+</package>

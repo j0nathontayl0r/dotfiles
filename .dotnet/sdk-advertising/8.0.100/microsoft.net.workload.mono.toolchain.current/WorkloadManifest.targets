@@ -1,9 +1,9 @@
 <!-- Licensed to the .NET Foundation under one or more agreements. The .NET Foundation licenses this file to you under the MIT license. -->
 <Project>
   <PropertyGroup>
-    <_RuntimePackInWorkloadVersionCurrent>8.0.6</_RuntimePackInWorkloadVersionCurrent>
+    <_RuntimePackInWorkloadVersionCurrent>8.0.7</_RuntimePackInWorkloadVersionCurrent>
     <_RuntimePackInWorkloadVersion7>7.0.20</_RuntimePackInWorkloadVersion7>
-    <_RuntimePackInWorkloadVersion6>6.0.31</_RuntimePackInWorkloadVersion6>
+    <_RuntimePackInWorkloadVersion6>6.0.32</_RuntimePackInWorkloadVersion6>
 
     <TargetsNet8    Condition="'$(TargetFrameworkIdentifier)' == '.NETCoreApp' and $([MSBuild]::VersionEquals('$(TargetFrameworkVersion)', '8.0'))">true</TargetsNet8>
     <TargetsNet6    Condition="'$(TargetFrameworkIdentifier)' == '.NETCoreApp' and $([MSBuild]::VersionEquals('$(TargetFrameworkVersion)', '6.0'))">true</TargetsNet6>
@@ -11,7 +11,7 @@
     <TargetsCurrent Condition="'$(TargetsNet8)' == 'true'">true</TargetsCurrent>
 
     <!-- override WorkloadDetectionWhen net7 == net8 -->
-    <WasmNativeWorkload7 Condition="'7.0.20' == '8.0.6'">$(WasmNativeWorkload8)</WasmNativeWorkload7>
+    <WasmNativeWorkload7 Condition="'7.0.20' == '8.0.7'">$(WasmNativeWorkload8)</WasmNativeWorkload7>
   </PropertyGroup>
 
   <Import Project="$(MSBuildThisFileDirectory)WorkloadManifest.Wasi.targets" />
@@ -82,70 +82,70 @@
 
   <!-- TFM specific -->
 
-  <Import Condition="'$(TargetsCurrent)' == 'true' and '$(RunAOTCompilation)' == 'true' and ('$(UsingBrowserRuntimeWorkload)' == 'true' or '$(UsingMobileWorkload)' == 'true')" Project="Sdk.props" Sdk="Microsoft.NET.Runtime.MonoAOTCompiler.Task" />
+  <Import Condition="'$(TargetsCurrent)' == 'true' and '$(RunAOTCompilation)' == 'true' and ('$(UsingBrowserRuntimeWorkload)' == 'true' or '$(UsingMobileWorkload)' == 'true')" Project="Sdk.props" Sdk="Microsoft.NET.Runtime.MonoAOTCompiler.Task.net8" />
 
   <ImportGroup Condition="'$(TargetsCurrent)' == 'true' and ('$(TargetPlatformIdentifier)' == 'android' or '$(_IsAndroidLibraryMode)' == 'true')">
-    <Import Project="Sdk.props" Sdk="Microsoft.NET.Runtime.MonoTargets.Sdk" />
-    <Import Project="Sdk.targets" Sdk="Microsoft.NET.Runtime.MonoTargets.Sdk" />
+    <Import Project="Sdk.props" Sdk="Microsoft.NET.Runtime.MonoTargets.Sdk.net8" />
+    <Import Project="Sdk.targets" Sdk="Microsoft.NET.Runtime.MonoTargets.Sdk.net8" />
   </ImportGroup>
   <ImportGroup Condition="'$(_IsAndroidLibraryMode)' == 'true' or '$(_IsAppleMobileLibraryMode)' == 'true'">
-    <Import Project="Sdk.props" Sdk="Microsoft.NET.Runtime.LibraryBuilder.Sdk" />
-    <Import Project="Sdk.targets" Sdk="Microsoft.NET.Runtime.LibraryBuilder.Sdk" />
+    <Import Project="Sdk.props" Sdk="Microsoft.NET.Runtime.LibraryBuilder.Sdk.net8" />
+    <Import Project="Sdk.targets" Sdk="Microsoft.NET.Runtime.LibraryBuilder.Sdk.net8" />
   </ImportGroup>
   <ImportGroup Condition="'$(TargetsCurrent)' == 'true' and '$(RunAOTCompilation)' == 'true' and ('$(TargetPlatformIdentifier)' == 'android' or '$(_IsAndroidLibraryMode)' == 'true')">
-    <Import Project="Sdk.props" Sdk="Microsoft.NETCore.App.Runtime.AOT.Cross.android-x86" />
-    <Import Project="Sdk.props" Sdk="Microsoft.NETCore.App.Runtime.AOT.Cross.android-x64" />
-    <Import Project="Sdk.props" Sdk="Microsoft.NETCore.App.Runtime.AOT.Cross.android-arm" />
-    <Import Project="Sdk.props" Sdk="Microsoft.NETCore.App.Runtime.AOT.Cross.android-arm64" />
+    <Import Project="Sdk.props" Sdk="Microsoft.NETCore.App.Runtime.AOT.Cross.net8.android-x86" />
+    <Import Project="Sdk.props" Sdk="Microsoft.NETCore.App.Runtime.AOT.Cross.net8.android-x64" />
+    <Import Project="Sdk.props" Sdk="Microsoft.NETCore.App.Runtime.AOT.Cross.net8.android-arm" />
+    <Import Project="Sdk.props" Sdk="Microsoft.NETCore.App.Runtime.AOT.Cross.net8.android-arm64" />
   </ImportGroup>
 
   <ImportGroup Condition="'$(TargetsCurrent)' == 'true' and '$(TargetPlatformIdentifier)' == 'macOS'">
-    <Import Project="Sdk.props" Sdk="Microsoft.NET.Runtime.MonoTargets.Sdk" />
-    <Import Project="Sdk.targets" Sdk="Microsoft.NET.Runtime.MonoTargets.Sdk" />
+    <Import Project="Sdk.props" Sdk="Microsoft.NET.Runtime.MonoTargets.Sdk.net8" />
+    <Import Project="Sdk.targets" Sdk="Microsoft.NET.Runtime.MonoTargets.Sdk.net8" />
   </ImportGroup>
 
   <ImportGroup Condition="'$(TargetsCurrent)' == 'true' and ('$(TargetPlatformIdentifier)' == 'ios' or '$(_IsiOSLibraryMode)' == 'true')">
-    <Import Project="Sdk.props" Sdk="Microsoft.NET.Runtime.MonoTargets.Sdk" />
-    <Import Project="Sdk.targets" Sdk="Microsoft.NET.Runtime.MonoTargets.Sdk" />
+    <Import Project="Sdk.props" Sdk="Microsoft.NET.Runtime.MonoTargets.Sdk.net8" />
+    <Import Project="Sdk.targets" Sdk="Microsoft.NET.Runtime.MonoTargets.Sdk.net8" />
   </ImportGroup>
   <ImportGroup Condition="'$(TargetsCurrent)' == 'true' and $([MSBuild]::IsOSPlatform('osx')) and ('$(TargetPlatformIdentifier)' == 'ios' or '$(_IsiOSLibraryMode)' == 'true')">
-    <Import Project="Sdk.props" Sdk="Microsoft.NETCore.App.Runtime.AOT.Cross.ios-arm64" />
-    <Import Project="Sdk.props" Sdk="Microsoft.NETCore.App.Runtime.AOT.Cross.iossimulator-arm64" />
-    <Import Project="Sdk.props" Sdk="Microsoft.NETCore.App.Runtime.AOT.Cross.iossimulator-x64" />
+    <Import Project="Sdk.props" Sdk="Microsoft.NETCore.App.Runtime.AOT.Cross.net8.ios-arm64" />
+    <Import Project="Sdk.props" Sdk="Microsoft.NETCore.App.Runtime.AOT.Cross.net8.iossimulator-arm64" />
+    <Import Project="Sdk.props" Sdk="Microsoft.NETCore.App.Runtime.AOT.Cross.net8.iossimulator-x64" />
   </ImportGroup>
 
   <ImportGroup Condition="'$(TargetsCurrent)' == 'true' and ('$(TargetPlatformIdentifier)' == 'maccatalyst' or '$(_IsMacCatalystLibraryMode)' == 'true')">
-    <Import Project="Sdk.props" Sdk="Microsoft.NET.Runtime.MonoTargets.Sdk" />
-    <Import Project="Sdk.targets" Sdk="Microsoft.NET.Runtime.MonoTargets.Sdk" />
+    <Import Project="Sdk.props" Sdk="Microsoft.NET.Runtime.MonoTargets.Sdk.net8" />
+    <Import Project="Sdk.targets" Sdk="Microsoft.NET.Runtime.MonoTargets.Sdk.net8" />
   </ImportGroup>
   <ImportGroup Condition="'$(TargetsCurrent)' == 'true' and $([MSBuild]::IsOSPlatform('osx')) and ('$(TargetPlatformIdentifier)' == 'maccatalyst' or '$(_IsMacCatalystLibraryMode)' == 'true')">
-    <Import Project="Sdk.props" Sdk="Microsoft.NETCore.App.Runtime.AOT.Cross.maccatalyst-arm64" />
-    <Import Project="Sdk.props" Sdk="Microsoft.NETCore.App.Runtime.AOT.Cross.maccatalyst-x64" />
+    <Import Project="Sdk.props" Sdk="Microsoft.NETCore.App.Runtime.AOT.Cross.net8.maccatalyst-arm64" />
+    <Import Project="Sdk.props" Sdk="Microsoft.NETCore.App.Runtime.AOT.Cross.net8.maccatalyst-x64" />
   </ImportGroup>
 
   <ImportGroup Condition="'$(TargetsCurrent)' == 'true' and ('$(TargetPlatformIdentifier)' == 'tvos' or '$(_IstvOSLibraryMode)' == 'true')">
-    <Import Project="Sdk.props" Sdk="Microsoft.NET.Runtime.MonoTargets.Sdk" />
-    <Import Project="Sdk.targets" Sdk="Microsoft.NET.Runtime.MonoTargets.Sdk" />
+    <Import Project="Sdk.props" Sdk="Microsoft.NET.Runtime.MonoTargets.Sdk.net8" />
+    <Import Project="Sdk.targets" Sdk="Microsoft.NET.Runtime.MonoTargets.Sdk.net8" />
   </ImportGroup>
   <ImportGroup Condition="'$(TargetsCurrent)' == 'true' and $([MSBuild]::IsOSPlatform('osx')) and ('$(TargetPlatformIdentifier)' == 'tvos' or '$(_IstvOSLibraryMode)' == 'true')">
-    <Import Project="Sdk.props" Sdk="Microsoft.NETCore.App.Runtime.AOT.Cross.tvos-arm64" />
-    <Import Project="Sdk.props" Sdk="Microsoft.NETCore.App.Runtime.AOT.Cross.tvossimulator-arm64" />
-    <Import Project="Sdk.props" Sdk="Microsoft.NETCore.App.Runtime.AOT.Cross.tvossimulator-x64" />
+    <Import Project="Sdk.props" Sdk="Microsoft.NETCore.App.Runtime.AOT.Cross.net8.tvos-arm64" />
+    <Import Project="Sdk.props" Sdk="Microsoft.NETCore.App.Runtime.AOT.Cross.net8.tvossimulator-arm64" />
+    <Import Project="Sdk.props" Sdk="Microsoft.NETCore.App.Runtime.AOT.Cross.net8.tvossimulator-x64" />
   </ImportGroup>
 
   <ImportGroup Condition="'$(TargetsCurrent)' == 'true' and '$(RuntimeIdentifier)' == 'browser-wasm' and '$(UsingBrowserRuntimeWorkload)' == 'true'">
-    <Import Project="Sdk.props" Sdk="Microsoft.NET.Runtime.MonoTargets.Sdk" />
-    <Import Project="Sdk.props" Sdk="Microsoft.NET.Runtime.WebAssembly.Sdk" />
-    <Import Project="Sdk.targets" Sdk="Microsoft.NET.Runtime.WebAssembly.Sdk" />
-    <Import Project="Sdk.props" Sdk="Microsoft.NETCore.App.Runtime.AOT.Cross.browser-wasm" />
-    <Import Project="Sdk.targets" Sdk="Microsoft.NET.Runtime.MonoTargets.Sdk" />
+    <Import Project="Sdk.props" Sdk="Microsoft.NET.Runtime.MonoTargets.Sdk.net8" />
+    <Import Project="Sdk.props" Sdk="Microsoft.NET.Runtime.WebAssembly.Sdk.net8" />
+    <Import Project="Sdk.targets" Sdk="Microsoft.NET.Runtime.WebAssembly.Sdk.net8" />
+    <Import Project="Sdk.props" Sdk="Microsoft.NETCore.App.Runtime.AOT.Cross.net8.browser-wasm" />
+    <Import Project="Sdk.targets" Sdk="Microsoft.NET.Runtime.MonoTargets.Sdk.net8" />
   </ImportGroup>
 
   <ImportGroup Condition="'$(TargetsCurrent)' == 'true' and '$(RuntimeIdentifier)' == 'wasi-wasm' and '$(UsingWasiRuntimeWorkload)' == 'true'">
-    <Import Project="Sdk.props" Sdk="Microsoft.NET.Runtime.MonoTargets.Sdk" />
-    <Import Project="Sdk.props" Sdk="Microsoft.NET.Runtime.WebAssembly.Wasi.Sdk" />
-    <Import Project="Sdk.targets" Sdk="Microsoft.NET.Runtime.WebAssembly.Wasi.Sdk" />
-    <Import Project="Sdk.targets" Sdk="Microsoft.NET.Runtime.MonoTargets.Sdk" />
+    <Import Project="Sdk.props" Sdk="Microsoft.NET.Runtime.MonoTargets.Sdk.net8" />
+    <Import Project="Sdk.props" Sdk="Microsoft.NET.Runtime.WebAssembly.Wasi.Sdk.net8" />
+    <Import Project="Sdk.targets" Sdk="Microsoft.NET.Runtime.WebAssembly.Wasi.Sdk.net8" />
+    <Import Project="Sdk.targets" Sdk="Microsoft.NET.Runtime.MonoTargets.Sdk.net8" />
   </ImportGroup>
 
   <PropertyGroup Condition="'$(TargetsCurrent)' == 'true' and ('$(UsingMobileWorkload)' == 'true' or '$(RuntimeIdentifier)' == 'browser-wasm' or '$(RuntimeIdentifier)' == 'wasi-wasm')">
