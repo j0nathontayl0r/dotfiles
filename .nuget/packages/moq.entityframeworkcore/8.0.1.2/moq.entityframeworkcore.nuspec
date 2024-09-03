@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+  <metadata>
+    <id>Moq.EntityFrameworkCore</id>
+    <version>8.0.1.2</version>
+    <authors>Michał Jankowski</authors>
+    <license type="expression">MIT</license>
+    <licenseUrl>https://licenses.nuget.org/MIT</licenseUrl>
+    <readme>README.md</readme>
+    <projectUrl>https://github.com/MichalJankowskii/Moq.EntityFrameworkCore</projectUrl>
+    <description>Library that provides methods that will help you with mocking Entity Framework Core.</description>
+    <releaseNotes>Version 8.0.0.1
+Added support for EntityFrameworkCore 8.0</releaseNotes>
+    <copyright>Copyright 2024 - Michał Jankowski</copyright>
+    <tags>Moq mocking EF EnityFramework DbSet DbContext unit test testing framework assert TDD BDD EntityFrameworkCore EFCore Core</tags>
+    <repository type="git" url="https://github.com/MichalJankowskii/Moq.EntityFrameworkCore" commit="4496981250838533799519c2bac194628fc60419" />
+    <dependencies>
+      <group targetFramework="net8.0">
+        <dependency id="Microsoft.EntityFrameworkCore" version="8.0.1" exclude="Build,Analyzers" />
+        <dependency id="Moq" version="4.20.70" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+  </metadata>
+</package>

@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>LogicBuilder.Structures</id>
+    <version>5.0.10</version>
+    <authors>BlaiseD</authors>
+    <license type="expression">MIT</license>
+    <licenseUrl>https://licenses.nuget.org/MIT</licenseUrl>
+    <projectUrl>https://github.com/BlaiseD/LogicBuilder</projectUrl>
+    <description>LogicBuilder.Structures includes classes used by multiple components in the LogicBuilder data stack.</description>
+    <releaseNotes>Declaring unused classes obsolete.</releaseNotes>
+    <copyright>Copyright © BPS 2019</copyright>
+    <tags>logicbuilder</tags>
+    <repository type="git" url="https://github.com/BlaiseD/LogicBuilder.DataComponents" commit="f9e60060c71030385e142b6c0ee9c19bdcdd2c57" />
+    <dependencies>
+      <group targetFramework=".NETStandard2.0" />
+    </dependencies>
+  </metadata>
+</package>

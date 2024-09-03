@@ -1,7 +1,7 @@
 {
-  "version": "8.0.7",
+  "version": "8.0.8",
   "depends-on": {
-    "Microsoft.NET.Workload.Emscripten.net7": "8.0.7"
+    "Microsoft.NET.Workload.Emscripten.net7": "8.0.8"
   },
   "workloads": {
     "wasm-tools-net7": {

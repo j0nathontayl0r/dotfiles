@@ -1,5 +1,5 @@
 {
-  "version": "8.0.7",
+  "version": "8.0.8",
   "workloads": {
     "microsoft-net-sdk-emscripten-net6": {
       "abstract": true,
@@ -15,7 +15,7 @@
   "packs": {
     "Microsoft.NET.Runtime.Emscripten.Node.net6" : {
       "kind": "Sdk",
-      "version": "6.0.32",
+      "version": "6.0.33",
       "alias-to": {
         "win-x64": "Microsoft.NET.Runtime.Emscripten.2.0.23.Node.win-x64",
         "win-arm64": "Microsoft.NET.Runtime.Emscripten.2.0.23.Node.win-x64",
@@ -26,7 +26,7 @@
     },
     "Microsoft.NET.Runtime.Emscripten.Python.net6" : {
       "kind": "Sdk",
-      "version": "6.0.32",
+      "version": "6.0.33",
       "alias-to": {
         "win-x64": "Microsoft.NET.Runtime.Emscripten.2.0.23.Python.win-x64",
         "win-arm64": "Microsoft.NET.Runtime.Emscripten.2.0.23.Python.win-x64",
@@ -36,7 +36,7 @@
     },
     "Microsoft.NET.Runtime.Emscripten.Sdk.net6" : {
       "kind": "Sdk",
-      "version": "6.0.32",
+      "version": "6.0.33",
       "alias-to": {
         "win-x64": "Microsoft.NET.Runtime.Emscripten.2.0.23.Sdk.win-x64",
         "win-arm64": "Microsoft.NET.Runtime.Emscripten.2.0.23.Sdk.win-x64",

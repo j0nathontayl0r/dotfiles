@@ -1,9 +1,9 @@
 <!-- Licensed to the .NET Foundation under one or more agreements. The .NET Foundation licenses this file to you under the MIT license. -->
 <Project>
   <PropertyGroup>
-    <_RuntimePackInWorkloadVersionCurrent>8.0.7</_RuntimePackInWorkloadVersionCurrent>
+    <_RuntimePackInWorkloadVersionCurrent>8.0.8</_RuntimePackInWorkloadVersionCurrent>
     <_RuntimePackInWorkloadVersion7>7.0.20</_RuntimePackInWorkloadVersion7>
-    <_RuntimePackInWorkloadVersion6>6.0.32</_RuntimePackInWorkloadVersion6>
+    <_RuntimePackInWorkloadVersion6>6.0.33</_RuntimePackInWorkloadVersion6>
 
     <TargetsNet8    Condition="'$(TargetFrameworkIdentifier)' == '.NETCoreApp' and $([MSBuild]::VersionEquals('$(TargetFrameworkVersion)', '8.0'))">true</TargetsNet8>
     <TargetsNet6    Condition="'$(TargetFrameworkIdentifier)' == '.NETCoreApp' and $([MSBuild]::VersionEquals('$(TargetFrameworkVersion)', '6.0'))">true</TargetsNet6>
@@ -11,7 +11,7 @@
     <TargetsCurrent Condition="'$(TargetsNet8)' == 'true'">true</TargetsCurrent>
 
     <!-- override WorkloadDetectionWhen net7 == net8 -->
-    <WasmNativeWorkload7 Condition="'7.0.20' == '8.0.7'">$(WasmNativeWorkload8)</WasmNativeWorkload7>
+    <WasmNativeWorkload7 Condition="'7.0.20' == '8.0.8'">$(WasmNativeWorkload8)</WasmNativeWorkload7>
   </PropertyGroup>
 
   <Import Project="$(MSBuildThisFileDirectory)WorkloadManifest.Wasi.targets" />
@@ -62,7 +62,8 @@
     <UsingBrowserRuntimeWorkload Condition="'$(UsingBrowserRuntimeWorkload)' == ''">$(WasmNativeWorkloadAvailable)</UsingBrowserRuntimeWorkload>
   </PropertyGroup>
 
-  <PropertyGroup Condition="'$(NativeLib)' != ''">
+  <!-- Mono AOT library mode support -->
+  <PropertyGroup Condition="'$(PublishAot)' != 'true' and '$(NativeLib)' != ''">
     <_IsAndroidLibraryMode Condition="'$(RuntimeIdentifier)' == 'android-arm64' or '$(RuntimeIdentifier)' == 'android-arm' or '$(RuntimeIdentifier)' == 'android-x64' or '$(RuntimeIdentifier)' == 'android-x86'">true</_IsAndroidLibraryMode>
     <_IsAppleMobileLibraryMode Condition="'$(RuntimeIdentifier)' == 'ios-arm64' or '$(RuntimeIdentifier)' == 'iossimulator-arm64' or '$(RuntimeIdentifier)' == 'iossimulator-x64' or '$(RuntimeIdentifier)' == 'maccatalyst-arm64' or '$(RuntimeIdentifier)' == 'maccatalyst-x64' or '$(RuntimeIdentifier)' == 'tvos-arm64'">true</_IsAppleMobileLibraryMode>
     <_IsiOSLibraryMode Condition="'$(RuntimeIdentifier)' == 'ios-arm64' or '$(RuntimeIdentifier)' == 'iossimulator-arm64' or '$(RuntimeIdentifier)' == 'iossimulator-x64'">true</_IsiOSLibraryMode>
