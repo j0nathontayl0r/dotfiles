@@ -119,3 +119,4 @@ alias ls='colorls'
 source ~/.oh-my-zsh/custom/themes/powerlevel10k
 source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
