@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+  <metadata>
+    <id>Npgsql.EntityFrameworkCore.PostgreSQL.Design</id>
+    <version>1.1.1</version>
+    <authors>Shay Rojansky</authors>
+    <owners>Shay Rojansky</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <licenseUrl>https://raw.githubusercontent.com/npgsql/Npgsql.EntityFrameworkCore.PostgreSQL/dev/LICENSE.txt</licenseUrl>
+    <iconUrl>http://www.npgsql.org/img/postgresql.gif</iconUrl>
+    <description>PostgreSQL/Npgsql provider for Entity Framework Core.</description>
+    <copyright>Copyright 2017 © The Npgsql Development Team</copyright>
+    <tags>npgsql postgresql postgres Entity Framework Core entity-framework-core ef efcore orm sql</tags>
+    <repository type="git" url="git://github.com/npgsql/Npgsql.EntityFrameworkCore.PostgreSQL" />
+    <dependencies>
+      <group targetFramework=".NETFramework4.5.1">
+        <dependency id="Npgsql.EntityFrameworkCore.PostgreSQL" version="1.1.1" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.EntityFrameworkCore" version="1.1.2" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.EntityFrameworkCore.Relational" version="1.1.2" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.EntityFrameworkCore.Relational.Design" version="1.1.2" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.Extensions.DependencyInjection" version="1.1.0" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.Extensions.DependencyInjection.Abstractions" version="1.1.0" exclude="Build,Analyzers" />
+        <dependency id="Npgsql" version="3.2.5" exclude="Build,Analyzers" />
+      </group>
+      <group targetFramework=".NETStandard1.3">
+        <dependency id="Npgsql.EntityFrameworkCore.PostgreSQL" version="1.1.1" exclude="Build,Analyzers" />
+        <dependency id="NETStandard.Library" version="1.6.1" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.EntityFrameworkCore" version="1.1.2" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.EntityFrameworkCore.Relational" version="1.1.2" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.EntityFrameworkCore.Relational.Design" version="1.1.2" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.Extensions.DependencyInjection" version="1.1.0" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.Extensions.DependencyInjection.Abstractions" version="1.1.0" exclude="Build,Analyzers" />
+        <dependency id="Npgsql" version="3.2.5" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+    <frameworkAssemblies>
+      <frameworkAssembly assemblyName="System.ComponentModel.Composition" targetFramework=".NETFramework4.5.1" />
+      <frameworkAssembly assemblyName="System.ComponentModel.DataAnnotations" targetFramework=".NETFramework4.5.1" />
+      <frameworkAssembly assemblyName="System.Core" targetFramework=".NETFramework4.5.1" />
+      <frameworkAssembly assemblyName="System.Data" targetFramework=".NETFramework4.5.1" />
+      <frameworkAssembly assemblyName="System" targetFramework=".NETFramework4.5.1" />
+      <frameworkAssembly assemblyName="System.IO.Compression" targetFramework=".NETFramework4.5.1" />
+      <frameworkAssembly assemblyName="System.Net.Http" targetFramework=".NETFramework4.5.1" />
+      <frameworkAssembly assemblyName="System.Numerics" targetFramework=".NETFramework4.5.1" />
+      <frameworkAssembly assemblyName="System.Transactions" targetFramework=".NETFramework4.5.1" />
+      <frameworkAssembly assemblyName="System.Xml" targetFramework=".NETFramework4.5.1" />
+      <frameworkAssembly assemblyName="System.Xml.Linq" targetFramework=".NETFramework4.5.1" />
+    </frameworkAssemblies>
+  </metadata>
+</package>
