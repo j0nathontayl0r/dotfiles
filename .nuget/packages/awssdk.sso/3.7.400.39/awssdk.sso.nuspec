@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+  <metadata>
+    <id>AWSSDK.SSO</id>
+    <version>3.7.400.39</version>
+    <title>AWSSDK - SSO</title>
+    <authors>Amazon Web Services</authors>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <license type="expression">Apache-2.0</license>
+    <licenseUrl>https://licenses.nuget.org/Apache-2.0</licenseUrl>
+    <icon>images\AWSLogo.png</icon>
+    <projectUrl>https://github.com/aws/aws-sdk-net/</projectUrl>
+    <description>This is an initial release of AWS Single Sign-On (SSO) end-user access. This release adds support for accessing AWS accounts assigned in AWS SSO using short term credentials.</description>
+    <language>en-US</language>
+    <tags>AWS Amazon cloud SSO aws-sdk-v3</tags>
+    <dependencies>
+      <dependency id="AWSSDK.Core" version="[3.7.400.39, 4.0.0)" />
+    </dependencies>
+  </metadata>
+</package>
